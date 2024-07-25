@@ -1,8 +1,13 @@
 import React from 'react'
+import Nav from './Nav'
+import Table from './Table'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Nav />
+      <Table />
+    </div>
   )
 }
 

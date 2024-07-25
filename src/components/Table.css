@@ -1,0 +1,38 @@
+.container-table {
+  margin: 20px 40px;
+  background: rgb(224, 217, 217);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: 1px solid grey;
+}
+.table-div {
+  margin: 10px 20px;
+}
+
+.container-table tr th {
+  color: red;
+}
+
+.container-table {
+  width: 100%;
+  overflow-x: none; 
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.vertical-line {
+  border-left: 2px solid #000; 
+}
