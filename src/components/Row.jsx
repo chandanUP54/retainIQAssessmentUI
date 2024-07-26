@@ -1,17 +1,34 @@
-// Row.js
-import React from 'react';
 
-const Row = ({ data, onEdit, onDelete }) => {
+import React from "react";
+import "./Row.css";
+import FilterProduct from "./FilterProducts";
+import RowComponents from "./RowComponents";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import DragIndicatorOutlinedIcon from "@mui/icons-material/DragIndicatorOutlined";
+const Row = ({ row, columns, rows, setRows }) => {
+  const deleteRow = (rowId) => {
+    setRows(rows.filter((row) => row.id !== rowId));
+  };
   return (
-    <tr>
-      <td>{data.id}</td>
-      <td>{data.name}</td>
-      <td>{data.value}</td>
-      <td>
-        <button onClick={() => onEdit(data.id)}>Edit</button>
-        <button onClick={() => onDelete(data.id)}>Delete</button>
-      </td>
-    </tr>
+    <>
+      <tr key={row.id} className="row-tr">
+        <td className="row-td ">
+          {row.stateName}
+          <DragIndicatorOutlinedIcon />
+          <DeleteOutlinedIcon onClick={() => deleteRow(row.id)} />
+        </td>
+
+        <td className="row-td-filter">
+          <FilterProduct />
+        </td>
+
+        {columns.map((column) => (
+          <td key={`${row.id}-${column.id}`} className="row-td-added">
+            <RowComponents />
+          </td>
+        ))}
+      </tr>
+    </>
   );
 };
 

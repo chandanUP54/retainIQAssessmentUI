@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Table.css";
+import Row from "./Row";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 const initialRows = [
   { id: 1, stateName: "1" },
   { id: 2, stateName: "2" },
@@ -41,41 +43,49 @@ function Table() {
 
   return (
     <div className="container-table">
-      <div className="table-div">
-        <table className="table-div">
-          <thead>
-            <tr>
-              <th scope="col">State Name</th>
-              {columns.map((column) => (
-                <th scope="col" key={column.id}>
-                  {column.name}
-                  <button onClick={() => deleteColumn(column.id)}>
-                    Delete
-                  </button>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.id}>
-                <td>
+      <div className="table-wrap">
+        <div className="table-div">
+          <table>
+            <thead>
+              <tr>
+                <th className="empthy-th"></th>
+                <th className="product-filter-th">Product Filter</th>
+                {columns.map((column) => (
+                  <th key={column.id} className="items-th">
+                    {column.name}
+                    <MoreVertIcon onClick={() => deleteColumn(column.id)}/>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {/* {rows.map((row) => (
+              <tr
+                key={row.id}
+                style={{ height: "150px", border: "1px solid red" }}
+              >
+                <td  style={{ height: "150px", border: "1px solid red" }}>
                   {row.stateName}
-                  <button onClick={() => deleteRow(row.id)}>Delete</button>
+                  <button onClick={() => deleteRow(row.id)} >Delete</button>
                 </td>
                 {columns.map((column) => (
                   <td key={`${row.id}-${column.id}`}></td>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <button onClick={addColumn}>Add  Column</button>
-      </div>
-      <div>
-        <button onClick={addRow}>Add Row</button>
+            ))} */}
+
+              {rows.map((row) => (
+                <Row key={row.id} row={row} rows={rows} setRows={setRows} columns={columns}/>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <button onClick={addColumn}>Add Column</button>
+        </div>
+        <div>
+          <button onClick={addRow}>Add Row</button>
+        </div>
       </div>
     </div>
   );

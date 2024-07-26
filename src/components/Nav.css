@@ -5,6 +5,22 @@
   flex-direction: row;
   padding: 10px 20px;
 }
+.arrow-div{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 200px;
+}
+.arrow-div .arrow{
+  font-size: 30px;
+}
+.arrow-div h1{
+  font-size: 25px;
+
+}
+.arrow-div hr{
+  width: 250px;
+}
 .nav-button button {
   background: green;
   border: none;

@@ -1,0 +1,12 @@
+.filter-div {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 6px;
+}
+.filter-wrapper {
+  border: 1px solid black;
+  padding: 15px;
+}

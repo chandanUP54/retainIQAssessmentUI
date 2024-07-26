@@ -1,0 +1,24 @@
+.row-tr {
+  height: 120px;
+  /* border: 1px solid blue; */
+}
+
+.row-td {
+  height: 120px;
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px; 
+}
+
+.row-td-filter{
+  height: 120px;
+  /* border: 1px solid blue; */
+  width: 250px;
+}
+
+.row-td-added{
+  width: 200px;
+  /* border: 1px solid red; */
+}
