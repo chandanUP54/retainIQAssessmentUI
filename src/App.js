@@ -1,10 +1,12 @@
-
-import Home from './components/Home';
+import Home from "./components/home/Home";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
   return (
     <div className="App">
-     <Home />
+      <Sidebar>
+        <Home />
+      </Sidebar>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Table.css";
-import Row from "./Row";
+import Row from "../row/Row";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 const initialRows = [
   { id: 1, stateName: "1" },

@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from './Nav'
-import Table from './Table'
 
+import Table from '../table/Table'
+import Nav from '../nav/Nav'
 const Home = () => {
   return (
     <div>
