@@ -8,12 +8,11 @@ import DragIndicatorOutlinedIcon from "@mui/icons-material/DragIndicatorOutlined
 import { UserContext } from "../contexts/UserContext";
 
 const Row = ({ row, columns, rows, setRows, setColumns }) => {
-
-  const {msg,setMsg}=useContext(UserContext)
+  const { msg, setMsg } = useContext(UserContext);
 
   const deleteRow = (rowId) => {
     setRows(rows.filter((row) => row.id !== rowId));
-    setMsg("state remove")
+    setMsg("state remove");
   };
 
   const addColumn = () => {
@@ -23,12 +22,11 @@ const Row = ({ row, columns, rows, setRows, setColumns }) => {
       name: `Variant ${columns.length + 1}`,
     };
     setColumns([...columns, newColumn]);
-    // swal("varient added");
-    setMsg("varient added")
+    setMsg("varient added");
   };
 
   return (
-    <> 
+    <>
       <tr key={row.id} className="row-tr">
         <td className="row-td ">
           <h2> {row.stateName}</h2>

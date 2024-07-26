@@ -5,26 +5,23 @@
 
 .row-td {
   height: 120px;
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px; 
+  width: 150px;
 }
-.row-td-delete{
+.row-td-delete {
   display: none !important;
   color: red;
 }
-.row-td:hover .row-td-delete{
-  display: block !important;;
+.row-td:hover .row-td-delete {
+  display: block !important;
 }
-.row-td-filter{
+.row-td-filter {
   height: 120px;
   width: 350px;
- 
 }
 
-.row-td-added{
+.row-td-added {
   width: 200px;
-
 }
