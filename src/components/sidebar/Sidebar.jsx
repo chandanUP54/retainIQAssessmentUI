@@ -5,7 +5,6 @@ import {
   FaBars,
   FaUserAlt,
   FaShoppingBag,
-  FaThList,
 } from "react-icons/fa";
 import { CiImageOn } from "react-icons/ci";
 import { CgShoppingBag } from "react-icons/cg";

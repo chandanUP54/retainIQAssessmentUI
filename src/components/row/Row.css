@@ -1,6 +1,6 @@
 .row-tr {
   height: 120px;
-  /* border: 1px solid blue; */
+  border: 1px solid blue !important;
 }
 
 .row-td {
@@ -11,14 +11,20 @@
   align-items: center;
   width: 150px; 
 }
-
+.row-td-delete{
+  display: none !important;
+  color: red;
+}
+.row-td:hover .row-td-delete{
+  display: block !important;;
+}
 .row-td-filter{
   height: 120px;
-  /* border: 1px solid blue; */
-  width: 250px;
+  width: 350px;
+ 
 }
 
 .row-td-added{
   width: 200px;
-  /* border: 1px solid red; */
+
 }

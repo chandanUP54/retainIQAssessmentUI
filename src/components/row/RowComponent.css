@@ -1,0 +1,12 @@
+.row-component{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.row-component-wrapper{
+ background: white;
+ padding: 8px;
+ border-radius: 8px;
+ display: flex;
+ gap: 10px;
+}

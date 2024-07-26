@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Table.css";
 import Row from "../row/Row";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import AddTwoToneIcon from "@mui/icons-material/AddTwoTone";
+
+import { UserContext } from "../contexts/UserContext";
 const initialRows = [
   { id: 1, stateName: "1" },
   { id: 2, stateName: "2" },
@@ -14,6 +17,7 @@ const initialColumns = [
 
 function Table() {
   const [rows, setRows] = useState(initialRows);
+  const {msg,setMsg}=useContext(UserContext)
   const [columns, setColumns] = useState(initialColumns);
 
   const addRow = () => {
@@ -22,19 +26,8 @@ function Table() {
       stateName: `${rows.length + 1}`,
     };
     setRows([...rows, newRow]);
-  };
-
-  const deleteRow = (rowId) => {
-    setRows(rows.filter((row) => row.id !== rowId));
-  };
-
-  const addColumn = () => {
-    const newColumnId = `variant${columns.length + 1}`;
-    const newColumn = {
-      id: newColumnId,
-      name: `Variant ${columns.length + 1}`,
-    };
-    setColumns([...columns, newColumn]);
+    setMsg("state added")
+   
   };
 
   const deleteColumn = (columnId) => {
@@ -43,6 +36,8 @@ function Table() {
 
   return (
     <div className="container-table">
+    
+
       <div className="table-wrap">
         <div className="table-div">
           <table>
@@ -52,39 +47,34 @@ function Table() {
                 <th className="product-filter-th">Product Filter</th>
                 {columns.map((column) => (
                   <th key={column.id} className="items-th">
-                    {column.name}
-                    <MoreVertIcon onClick={() => deleteColumn(column.id)}/>
+                    <div className="item-th-column">
+                      {column.name}
+                      <MoreVertIcon />
+                    </div>
+
+                    {/* <MoreVertIcon onClick={() => deleteColumn(column.id)} /> */}
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {/* {rows.map((row) => (
-              <tr
-                key={row.id}
-                style={{ height: "150px", border: "1px solid red" }}
-              >
-                <td  style={{ height: "150px", border: "1px solid red" }}>
-                  {row.stateName}
-                  <button onClick={() => deleteRow(row.id)} >Delete</button>
-                </td>
-                {columns.map((column) => (
-                  <td key={`${row.id}-${column.id}`}></td>
-                ))}
-              </tr>
-            ))} */}
-
               {rows.map((row) => (
-                <Row key={row.id} row={row} rows={rows} setRows={setRows} columns={columns}/>
+                <Row
+                  key={row.id}
+                  row={row}
+                  rows={rows}
+                  setRows={setRows}
+                  columns={columns}
+                  setColumns={setColumns}
+                />
               ))}
             </tbody>
           </table>
         </div>
-        <div>
-          <button onClick={addColumn}>Add Column</button>
-        </div>
-        <div>
-          <button onClick={addRow}>Add Row</button>
+        <div className="table-button">
+          <button onClick={addRow}>
+            <AddTwoToneIcon />
+          </button>
         </div>
       </div>
     </div>

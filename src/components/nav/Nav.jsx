@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./Nav.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import MinimizeIcon from "@mui/icons-material/Minimize";
+import VerifiedTwoToneIcon from "@mui/icons-material/VerifiedTwoTone";
+import { UserContext } from "../contexts/UserContext";
 const Nav = () => {
+  const { msg } = useContext(UserContext);
+
   return (
     <div className="nav-div">
       <div className="arrow-div">
@@ -14,10 +16,16 @@ const Nav = () => {
         </div>
       </div>
 
-      <div>
-        <p>varient added</p>
-      </div>
-
+      
+        <div className="message-div">
+          {msg && (
+            <p>
+              <VerifiedTwoToneIcon className="tick-mark" />
+              {msg}
+            </p>
+          )}
+        </div>
+    
       <div className="nav-button">
         <button>Public Feed</button>
       </div>

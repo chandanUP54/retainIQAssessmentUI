@@ -5,8 +5,23 @@
   justify-content: center;
   background: white;
   border-radius: 6px;
+  border: 2px dotted rgb(226, 222, 222);
 }
 .filter-wrapper {
-  border: 1px solid black;
   padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-wrapper > div{
+  border: 1px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  padding: 8px;
+&:hover{
+  color: green;
+  background: lightgreen;
+}
 }

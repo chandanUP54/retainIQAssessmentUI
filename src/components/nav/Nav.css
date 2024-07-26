@@ -29,3 +29,22 @@
   width: 100px;
   height: 35px;
 }
+
+.tick-mark{
+  color: green;
+
+  padding-right: 6px;
+}
+.message-div{
+  
+  background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+.message-div p{
+  font-size: 20px;
+
+}
+
